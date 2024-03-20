@@ -1,0 +1,102 @@
+* {
+  font-family: 'Ford F-1';
+}
+
+.container {
+  width: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2em;
+}
+
+section {
+  width: 80em;
+}
+
+.step {
+  font-size: .7em;
+  color: #666;
+}
+
+.title-container {
+  &__subtitle {
+    margin: 0 0 1.5em 0;
+    color: #666;
+  }
+}
+
+.name-surname {
+  display: flex;
+  align-items: flex-start;
+
+  &__name {
+    margin-right: 2em;
+  }
+}
+
+.cpf-phone {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 1em;
+
+  &__cpf {
+    margin-right: 2em;
+  }
+}
+
+.input {
+  width: 100%;
+}
+
+.inp-left {
+  margin-right: 1em;
+}
+
+.inp-right {
+  margin-left: 1em;
+}
+
+lgr-input-text {
+  width: 100%;
+  margin-top: 2em;
+}
+
+.buttons {
+  width: 100%;
+  margin: 4em 0 0 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.text-danger {
+  margin: .5em 0 0 1em;
+  font-size: .8em;
+  color: #BF152C;
+}
+
+@media (max-width: 799px) {
+  .name-surname {
+    flex-direction: column;
+  }
+  .cpf-phone {
+    flex-direction: column;
+  }
+  .name-surname__name {
+    margin-right: 0;
+  }
+
+  .cpf-phone__cpf {
+    margin-right: 0;
+  }
+
+  .inp-left {
+    margin-right: 0;
+  }
+
+  .inp-right {
+    margin-left: 0;
+  }
+}

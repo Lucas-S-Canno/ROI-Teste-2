@@ -1,0 +1,90 @@
+<div class="container">
+
+  <section>
+
+    <p class="step">Passo 1 de 2</p>
+    <div class="title-container">
+      <lgr-heading size="xx-large" class="title-container__title">Cadastro</lgr-heading>
+      <p class="title-container__subtitle">Complete os dados solicitados do cliente</p>
+    </div>
+    <lgr-heading size="x-large" class="form-title">Dados pessoais</lgr-heading>
+
+    <form [formGroup]="form">
+
+        <div class="name-surname">
+          <div class="input inp-left">
+            <lgr-input-text
+            formControlName="name"
+            id="name"
+            label="Nome"
+            placeholder="Harry"
+            aria-describedby="ligero-input-text-1-helper-text"
+            status = "{{(form.get('name')?.errors && this.form.get('name')?.touched) ? 'error' : 'default'}}"
+            class="name-surname__name"></lgr-input-text>
+            <div class="text-danger" *ngIf="form.get('name')?.errors && this.form.get('name')?.touched">
+              {{ getErrorMessage('name') }}
+            </div>
+          </div>
+
+          <div class="input inp-right">
+            <lgr-input-text
+            formControlName="surname"
+            id="surname"
+            label="Sobrenome"
+            placeholder="Potter"
+            aria-describedby="ligero-input-text-1-helper-text"
+            class="name-surname__surname"
+            status = "{{(form.get('surname')?.errors && this.form.get('surname')?.touched) ? 'error' : 'default'}}"></lgr-input-text>
+            <div class="text-danger" *ngIf="form.get('surname')?.errors && this.form.get('surname')?.touched">
+              {{ getErrorMessage('surname') }}
+            </div>
+          </div>
+        </div>
+        <div class="cpf-phone">
+          <div class="input inp-left">
+            <lgr-input-text
+            formControlName="cpf"
+            id="cpf"
+            label="CPF"
+            placeholder="000.000.000-00"
+            aria-describedby="ligero-input-text-1-helper-text"
+            status = "{{(form.get('cpf')?.errors && this.form.get('cpf')?.touched) ? 'error' : 'default'}}"
+            class="cpf-phone__cpf"></lgr-input-text>
+            <div class="text-danger" *ngIf="form.get('cpf')?.errors && this.form.get('cpf')?.touched">
+              {{ getErrorMessage('cpf') }}
+            </div>
+          </div>
+          <div class="input inp-right">
+            <lgr-input-text
+            formControlName="phone"
+            id="phone"
+            label="Telefone"
+            placeholder="(00) 00000-0000"
+            aria-describedby="ligero-input-text-1-helper-text"
+            status = "{{(form.get('phone')?.errors && this.form.get('phone')?.touched) ? 'error' : 'default'}}"
+            class="cpf-phone__phone"></lgr-input-text>
+            <div class="text-danger" *ngIf="form.get('phone')?.errors && this.form.get('phone')?.touched">
+              {{ getErrorMessage('phone') }}
+            </div>
+          </div>
+        </div>
+
+    </form>
+
+    <div class="buttons">
+      <lgr-button
+      icon_position="right"
+      size="large"
+      variant="text">Voltar</lgr-button>
+
+      <lgr-button
+      icon="chevron_right"
+      icon_position="right"
+      size="large"
+      variant="primary">Proximo passo</lgr-button>
+    </div>
+
+  </section>
+
+</div>
+
